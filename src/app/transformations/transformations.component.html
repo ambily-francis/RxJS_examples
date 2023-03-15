@@ -1,0 +1,25 @@
+<div class = "main-container">
+  <div class="menu-container">
+
+    <button mat-button [matMenuTriggerFor]="rxjsOp">Rxjs Operators</button>
+    <mat-menu #rxjsOp="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="window">Window Operators</button>
+      <button mat-menu-item (click) ="bufferFn()">Buffer Operator</button>
+    </mat-menu>
+
+    <mat-menu #window="matMenu">
+      <button mat-menu-item (click)="windowFn()">Window</button>
+      <button mat-menu-item (click)="windowTimeFn()">Window Time</button>
+      <button mat-menu-item (click)="windowToggleFn()">Window Toggle</button>
+      <button mat-menu-item (click)="windowCountFn()">Window Count</button>
+      <button mat-menu-item (click)="windowWhenFn()">Window When</button>
+    </mat-menu>
+  </div>
+
+  <div class="output-container">
+    <div *ngIf="show">
+      <h3>{{heading}}</h3></div>
+    <div *ngFor="let a of arr">[{{a}}]</div>
+    <div *ngIf="showStatics">{{arr}}</div>
+  </div>
+</div>
